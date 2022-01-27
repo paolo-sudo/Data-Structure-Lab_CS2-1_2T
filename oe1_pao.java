@@ -54,7 +54,7 @@ public class oe1_pao{
 
         switch(ch){
             case 0:{
-                System.out.println("Thank you for trying the program!");
+                System.out.println("\nThank you for trying the program!\n");
                 repeat--;
                 break;
             }
