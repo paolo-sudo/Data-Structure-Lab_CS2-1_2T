@@ -44,9 +44,9 @@ public class oe1_pao{
         
         while(repeat!=0){
         System.out.println("[1] Create Array List");
-        System.out.println("[2] Insertion Sort");
-        System.out.println("[3] Bubble Sort");
-        System.out.println("[4] Exit Sort");
+        System.out.println("[2] Insert in Array");
+        System.out.println("[3] Search in Array");
+        System.out.println("[4] Delete in Array");
         System.out.println("[0] Exit");
         System.out.println();
         System.out.print("Select Operation: ");
