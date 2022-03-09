@@ -1,5 +1,5 @@
 /*
-Paolo
+Paolo S. Daquioag
 CS 2-1 | OE4
 */
 
@@ -50,10 +50,10 @@ public class quicksort2 {
         for (i = 0; i < arr.length; i++) {
            arr[i] = s.nextInt();    
         }
-        System.out.print("\nThe initial array is: ");
+        System.out.print("\nInput array: ");
         System.out.println(Arrays.toString(arr));
         my_quickSort(arr, 0, arr.length-1);
-        System.out.print("The sorted array is: ");
+        System.out.print("Sorted array: ");
         System.out.println (Arrays.toString(arr));
 
         int min = arr[0];
@@ -66,8 +66,8 @@ public class quicksort2 {
                 max = arr[size-1];
             }
         
-        System.out.println("\nMin: " + min);
-        System.out.println("Max: " + max);
+        System.out.println("\nMinimum value: " + min);
+        System.out.println("Maximum value: " + max);
         System.out.println();
     }
 }
