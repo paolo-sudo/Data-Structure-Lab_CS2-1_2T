@@ -83,6 +83,9 @@ public class MidtermPT {
         System.out.println("\tReversed word: "+ result.trim()); 	
     }
 
+    //[5] Tower of Hanoi
+    //[6] Recursive Call
+
     public static void main(String[] args){
 
         int ans, ch;
@@ -129,8 +132,8 @@ public class MidtermPT {
                 break;
             }
             case 4:{
-                System.out.println("\n\n\tReverse a Word");
-                myReverseWord(args);//okay
+                System.out.println("\n\n\tReverse a Word"); //okay
+                myReverseWord(args);
                 break;
             }
             case 5:{
