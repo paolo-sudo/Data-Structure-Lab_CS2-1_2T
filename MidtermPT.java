@@ -22,16 +22,7 @@ public class MidtermPT {
         }
     }
 
-    //[3] Factorial of a number
-    static int myFactorial(int num){
-        System.out.println(num + " x ");
-        if(num == 1)
-            return 1;
-        else  
-            return(num * myFactorial(num-1));   
-    }
-
-    //[4]Fibonacci series number
+    //[1]Fibonacci series number
     static int f1=0, f2=1, fn=0;
     static void myFibonacci(int num){
         if(num > 0){
@@ -44,7 +35,17 @@ public class MidtermPT {
         }
     }
 
-    //[5] Reverse a number base 10
+    //[2] Factorial of a number
+    static int myFactorial(int num){
+        System.out.println(num + " x ");
+        if(num == 1)
+            return 1;
+        else  
+            return(num * myFactorial(num-1));   
+    }
+
+    
+    //[3] Reverse a number base 10
     static void myReverse(int num){
         if(num < 10){
             System.out.print(num);
@@ -55,6 +56,19 @@ public class MidtermPT {
         }
     }
 
+    //[4] Reversed a word
+    static void myReverseWord(String[] args){
+        Scanner in = new Scanner(System.in);
+        System.out.print("\nEnter a Word: ");
+        String word = in.nextLine();
+        word = word.trim();
+        String result = ""; 
+        char[] ch = word.toCharArray();  
+        for (int i = ch.length - 1; i >= 0; i--) {
+                result += ch[i];
+            }
+        System.out.println("Reversed word: "+ result.trim()); 	
+    }
 
     public static void main(String[] args){
 
@@ -75,7 +89,7 @@ public class MidtermPT {
 
         switch(ans){
             case 1:{
-                int num;
+                int num;// okay
                 System.out.println("Fibonacci Series Number");
                 System.out.print("Enter a number: ");
                 num = in.nextInt();
@@ -91,7 +105,7 @@ public class MidtermPT {
                 break;
             }
             case 3:{
-                int num;
+                int num;// okay
                 System.out.println("Reverse a Number");
                 System.out.print("Enter a number: ");
                 num = in.nextInt();
@@ -100,8 +114,7 @@ public class MidtermPT {
                 break;
             }
             case 4:{
-                System.out.print("Reverse a Word");
-                System.out.print("Enter a word: ");
+                myReverseWord(args);//okay
                 break;
             }
             case 5:{
@@ -112,6 +125,8 @@ public class MidtermPT {
             case 6:{
                 System.out.print("Recursive Call");
                 System.out.print("Enter a number: ");
+                String word = in.nextLine();
+                my_recursion2(word);
                 break;
             }
 
