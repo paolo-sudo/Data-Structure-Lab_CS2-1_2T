@@ -54,7 +54,7 @@ public class MidtermPT {
             // factorial = factorial * i;
             factorial *= i;
         }
-        System.out.printf("Factorial of %d = %d", num, factorial);
+        System.out.printf("\tFactorial of %d = %d", num, factorial);
         return num;     
     }
     
@@ -72,7 +72,7 @@ public class MidtermPT {
     //[4] Reversed a word
     static void myReverseWord(String[] args){
         Scanner in = new Scanner(System.in);
-        System.out.print("\nEnter a Word: ");
+        System.out.print("\n\tEnter a Word: ");
         String word = in.nextLine();
         word = word.trim();
         String result = ""; 
@@ -80,7 +80,7 @@ public class MidtermPT {
         for (int i = ch.length - 1; i >= 0; i--) {
                 result += ch[i];
             }
-        System.out.println("Reversed word: "+ result.trim()); 	
+        System.out.println("\tReversed word: "+ result.trim()); 	
     }
 
     public static void main(String[] args){
@@ -89,31 +89,31 @@ public class MidtermPT {
         Scanner in = new Scanner(System.in);
 
         do{
-            System.out.println("APPLICATION OF RECURSION");
-            System.out.println("[1] Fibonacci Series Number");
-            System.out.println("[2] Factorial of a Number");
-            System.out.println("[3] Reverse a Number");
-            System.out.println("[4] Reverse a Word");
-            System.out.println("[5] Tower of Hanoi");
-            System.out.println("[6] Recursive Call");
-            System.out.println("[0] System Exit");
-            System.out.print("\nSelect your choice: ");
+            System.out.println("\n\n\tAPPLICATION OF RECURSION\n");
+            System.out.println("\t[1] Fibonacci Series Number");
+            System.out.println("\t[2] Factorial of a Number");
+            System.out.println("\t[3] Reverse a Number");
+            System.out.println("\t[4] Reverse a Word");
+            System.out.println("\t[5] Tower of Hanoi");
+            System.out.println("\t[6] Recursive Call");
+            System.out.println("\t[0] System Exit");
+            System.out.print("\n\tSelect your choice: ");
             ans = in.nextInt();
 
         switch(ans){
             case 1:{
                 int num;// okay
-                System.out.println("\nFibonacci Series Number");
-                System.out.print("\nEnter a number: ");
+                System.out.println("\n\n\tFibonacci Series Number");
+                System.out.print("\n\tEnter a number: ");
                 num = in.nextInt();
-                System.out.print("Here's the Fibonacci result:");
+                System.out.print("\tHere's the Fibonacci result:");
                 myFibonacci(num);
                 break;
             }
             case 2:{
-                int num;
-                System.out.println("\nFactorial of a Number");
-                System.out.print("\nEnter a number: ");
+                int num;// okay
+                System.out.println("\n\n\tFactorial of a Number");
+                System.out.print("\n\tEnter a number: ");
                 num = in.nextInt();
                 //System.out.print("Here's the  result: ");
                 myFactorial(num);
@@ -121,25 +121,26 @@ public class MidtermPT {
             }
             case 3:{
                 int num;// okay
-                System.out.println("\nReverse a Number");
-                System.out.print("Enter a number: ");
+                System.out.println("\n\n\tReverse a Number");
+                System.out.print("\n\tEnter a number: ");
                 num = in.nextInt();
-                System.out.print("Here's the reversed result: ");
+                System.out.print("\tHere's the reversed result: ");
                 myReverse(num);
                 break;
             }
             case 4:{
+                System.out.println("\n\n\tReverse a Word");
                 myReverseWord(args);//okay
                 break;
             }
             case 5:{
-                System.out.println("\nTower of Hanoi");
-                System.out.print("Enter a number: ");
+                System.out.println("\n\n\tTower of Hanoi");
+                System.out.print("\n\tEnter a number: ");
                 break;
             }
             case 6:{
-                System.out.println("\nRecursive Call");
-                System.out.print("Enter a number: ");
+                System.out.println("\n\n\tRecursive Call");
+                System.out.print("\n\tEnter a number: ");
                 String word = in.nextLine();
                 my_recursion2(word);
                 break;
@@ -150,11 +151,13 @@ public class MidtermPT {
             }
 
             default:
-                System.out.print("\nWrong input...");
+                System.out.print("\n\tWrong input...");
         }
         
-        System.out.print("\n\nEnter 1 to Try Again, [0 to exit]: ");
+        System.out.print("\n\n\tEnter 1 to Try Again, [0 to exit]: ");
             ch = in.nextInt();
+            System.out.println();
+            System.out.println();
         }while(ch != 0);
         //myReverse(123456789);
 
