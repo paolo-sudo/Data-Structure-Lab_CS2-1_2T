@@ -6,21 +6,6 @@ CS 2-1 | Midterm and PT2
 import java.util.Scanner;
 
 public class MidtermPT {
-    //[0] infinite times
-    static void my_recursion1(){
-        System.out.print("Hello");
-        my_recursion1();//call the function by itself
-    }
-
-    //[0] finite recursion - base case criteria
-    static int ctr = 0;
-    static void my_recursion2(String word){
-        ctr++;
-        if(ctr <= 3){
-            System.out.println(" " + word);
-            my_recursion2(word);
-        }
-    }
 
     //[1]Fibonacci series number
     static int f1=0, f2=1, fn=0;
@@ -34,28 +19,18 @@ public class MidtermPT {
         }
     }
 
-    /* 
-    //[2] Factorial of a number
-    static int myFactorial2(int num){
-        System.out.println(num + " x ");
-        if(num == 1)
-            return 1;
-        else  
-            return(num * myFactorial(num-1));     
-    } 
-    */
-
-    //[2] Factorial of a number
+    //[2] Factorial
     static int myFactorial(int num){
-        Scanner in = new Scanner(System.in);
-        long factorial = 1;
-        for(int i = 1; i <= num; ++i)
+        Scanner sc=new Scanner(System.in);
+        //Declare and Initialize the variable
+        int i=1, factorial=1;
+        while(i<=num)
         {
-            // factorial = factorial * i;
-            factorial *= i;
+            factorial = factorial * i;
+            i++;
         }
         System.out.printf("\tFactorial of %d = %d", num, factorial);
-        return num;     
+        return factorial;  
     }
     
     //[3] Reverse a number base 10
@@ -84,7 +59,70 @@ public class MidtermPT {
     }
 
     //[5] Tower of Hanoi
+    static void TowerOfHanoi(int n, char source_pole, char destination_pole, char auxillary_pole){
+        Scanner in = new Scanner(System.in);
+        if(n == 1){
+            System.out.println("\t\tTake disk 1 from pole " + source_pole + " to pole " + destination_pole);
+            return;
+        }
+        TowerOfHanoi(n - 1, source_pole, auxillary_pole, destination_pole);
+        System.out.println("\t\tTake disk " + n + " from pole " + source_pole + " to pole " + destination_pole);
+        TowerOfHanoi(n - 1, auxillary_pole, destination_pole, source_pole);
+    }
+
     //[6] Recursive Call
+    static boolean my_recursion1(int num){
+        if (num < 0){
+            System.out.println("Number is negative");
+        }
+        if(num == 0){
+            return false;
+        }
+        else{
+            return my_recursion2(num - 1);
+        }
+    }
+    
+    //[6] Recursive Call
+    static boolean my_recursion2(int num){
+        if (num < 0){
+            System.out.println("Number is negative");
+        }
+        if(num == 0){
+            return true;
+        }
+        else{
+            return my_recursion1(num - 1);
+        }
+    }
+ 
+    /* 
+    //[2] Factorial of a number
+    static int myFactorial2(int num){
+        System.out.println(num + " x ");
+        if(num == 1)
+            return 1;
+        else  
+            return(num * myFactorial(num-1));     
+    } 
+    
+    //[0] infinite times
+    static void my_recursion1(){
+        System.out.print("Hello");
+        my_recursion1();//call the function by itself
+    }
+    
+    //[0] finite recursion - base case criteria
+    static int ctr = 0;
+    static void my_recursion2(String word){
+        ctr++;
+        if(ctr <= 3){
+            System.out.println(" " + word);
+            my_recursion2(word);
+        }
+    }
+    */
+
 
     public static void main(String[] args){
 
@@ -104,8 +142,8 @@ public class MidtermPT {
             ans = in.nextInt();
 
         switch(ans){
-            case 1:{
-                int num;// okay
+            case 1:{ // okay
+                int num;
                 System.out.println("\n\n\tFibonacci Series Number");
                 System.out.print("\n\tEnter a number: ");
                 num = in.nextInt();
@@ -113,8 +151,8 @@ public class MidtermPT {
                 myFibonacci(num);
                 break;
             }
-            case 2:{
-                int num;// okay
+            case 2:{ // okay
+                int num;
                 System.out.println("\n\n\tFactorial of a Number");
                 System.out.print("\n\tEnter a number: ");
                 num = in.nextInt();
@@ -122,8 +160,8 @@ public class MidtermPT {
                 myFactorial(num);
                 break;
             }
-            case 3:{
-                int num;// okay
+            case 3:{ // okay
+                int num;
                 System.out.println("\n\n\tReverse a Number");
                 System.out.print("\n\tEnter a number: ");
                 num = in.nextInt();
@@ -131,21 +169,31 @@ public class MidtermPT {
                 myReverse(num);
                 break;
             }
-            case 4:{
-                System.out.println("\n\n\tReverse a Word"); //okay
+            case 4:{ // okay
+                System.out.println("\n\n\tReverse a Word"); 
                 myReverseWord(args);
                 break;
             }
-            case 5:{
+            case 5:{ // okay
+                int n;                                              
                 System.out.println("\n\n\tTower of Hanoi");
                 System.out.print("\n\tEnter a number: ");
+                n = in.nextInt();
+                System.out.println("\tHere's the result: ");
+                TowerOfHanoi(n, 'A', 'C', 'B');
                 break;
             }
-            case 6:{
+            case 6:{ // okay
+                Scanner Num = new Scanner(System.in);
                 System.out.println("\n\n\tRecursive Call");
                 System.out.print("\n\tEnter a number: ");
-                String word = in.nextLine();
-                my_recursion2(word);
+                int num = in.nextInt();
+                if(my_recursion2(num)){
+                    System.out.println("\tResult: " + num + " is even");
+                } 
+                else{
+                    System.out.println("\tResult: " + num + " is odd");
+                }
                 break;
             }
 
