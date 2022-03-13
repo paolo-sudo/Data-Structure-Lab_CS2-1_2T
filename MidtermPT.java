@@ -6,13 +6,13 @@ CS 2-1 | Midterm and PT2
 import java.util.Scanner;
 
 public class MidtermPT {
-    //[1] infinite times
+    //[0] infinite times
     static void my_recursion1(){
         System.out.print("Hello");
         my_recursion1();//call the function by itself
     }
 
-    //[2] finite recursion - base case criteria
+    //[0] finite recursion - base case criteria
     static int ctr = 0;
     static void my_recursion2(String word){
         ctr++;
@@ -31,19 +31,32 @@ public class MidtermPT {
             f2 = fn;
             System.out.print(" " + fn);
             myFibonacci(num-1);
-
         }
     }
 
+    /* 
     //[2] Factorial of a number
-    static int myFactorial(int num){
+    static int myFactorial2(int num){
         System.out.println(num + " x ");
         if(num == 1)
             return 1;
         else  
-            return(num * myFactorial(num-1));   
-    }
+            return(num * myFactorial(num-1));     
+    } 
+    */
 
+    //[2] Factorial of a number
+    static int myFactorial(int num){
+        Scanner in = new Scanner(System.in);
+        long factorial = 1;
+        for(int i = 1; i <= num; ++i)
+        {
+            // factorial = factorial * i;
+            factorial *= i;
+        }
+        System.out.printf("Factorial of %d = %d", num, factorial);
+        return num;     
+    }
     
     //[3] Reverse a number base 10
     static void myReverse(int num){
@@ -90,23 +103,25 @@ public class MidtermPT {
         switch(ans){
             case 1:{
                 int num;// okay
-                System.out.println("Fibonacci Series Number");
-                System.out.print("Enter a number: ");
+                System.out.println("\nFibonacci Series Number");
+                System.out.print("\nEnter a number: ");
                 num = in.nextInt();
+                System.out.print("Here's the Fibonacci result:");
                 myFibonacci(num);
                 break;
             }
             case 2:{
                 int num;
-                System.out.println("Factorial of a Number");
-                System.out.print("Enter a number: ");
+                System.out.println("\nFactorial of a Number");
+                System.out.print("\nEnter a number: ");
                 num = in.nextInt();
+                //System.out.print("Here's the  result: ");
                 myFactorial(num);
                 break;
             }
             case 3:{
                 int num;// okay
-                System.out.println("Reverse a Number");
+                System.out.println("\nReverse a Number");
                 System.out.print("Enter a number: ");
                 num = in.nextInt();
                 System.out.print("Here's the reversed result: ");
@@ -118,12 +133,12 @@ public class MidtermPT {
                 break;
             }
             case 5:{
-                System.out.print("Tower of Hanoi");
+                System.out.println("\nTower of Hanoi");
                 System.out.print("Enter a number: ");
                 break;
             }
             case 6:{
-                System.out.print("Recursive Call");
+                System.out.println("\nRecursive Call");
                 System.out.print("Enter a number: ");
                 String word = in.nextLine();
                 my_recursion2(word);
