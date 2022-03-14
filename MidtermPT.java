@@ -130,13 +130,13 @@ public class MidtermPT {
         Scanner in = new Scanner(System.in);
 
         do{
-            System.out.println("\n\n\tAPPLICATION OF RECURSION\n");
+            System.out.println("\n\tAPPLICATION OF RECURSION\n");
             System.out.println("\t[1] Fibonacci Series Number");
             System.out.println("\t[2] Factorial of a Number");
             System.out.println("\t[3] Reverse a Number");
             System.out.println("\t[4] Reverse a Word");
             System.out.println("\t[5] Tower of Hanoi");
-            System.out.println("\t[6] Recursive Call");
+            System.out.println("\t[6] Recursive Call (Odd or Even)");
             System.out.println("\t[0] System Exit");
             System.out.print("\n\tSelect your choice: ");
             ans = in.nextInt();
@@ -185,14 +185,14 @@ public class MidtermPT {
             }
             case 6:{ // okay
                 Scanner Num = new Scanner(System.in);
-                System.out.println("\n\n\tRecursive Call");
+                System.out.println("\n\n\tRecursive Call (Odd or Even)");
                 System.out.print("\n\tEnter a number: ");
                 int num = in.nextInt();
                 if(my_recursion2(num)){
-                    System.out.println("\tResult: " + num + " is even");
+                    System.out.println("\tResult: " + num + " is an even number");
                 } 
                 else{
-                    System.out.println("\tResult: " + num + " is odd");
+                    System.out.println("\tResult: " + num + " is an odd number");
                 }
                 break;
             }
