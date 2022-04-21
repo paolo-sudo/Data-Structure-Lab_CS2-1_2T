@@ -1,6 +1,6 @@
 /*
 Paolo D.
-CS 2-1 | PT4 "Implementation Of Data Structures and Algorithm in A Computer Game"
+CS 2-1 | PT4 "Implementation of Data Structures and Algorithms in A Computer Game"
 */
 
 import java.util.Scanner;
